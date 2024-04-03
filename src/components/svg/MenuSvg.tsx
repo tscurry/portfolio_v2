@@ -1,11 +1,6 @@
-import * as React from 'react';
 import { SVGMotionProps, motion } from 'framer-motion';
 
-const Path = (
-  props: JSX.IntrinsicAttributes &
-    SVGMotionProps<SVGPathElement> &
-    React.RefAttributes<SVGPathElement>,
-) => (
+const Path = (props: SVGMotionProps<SVGPathElement>) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
@@ -21,7 +16,13 @@ type Props = {
 
 const MenuSvg = ({ toggle }: Props) => {
   return (
-    <button onClick={toggle} className="svg-button">
+    <motion.button
+      onClick={toggle}
+      className="svg-button"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.2 }}
+    >
       <svg width="23" height="23" viewBox="0 0 23 23">
         <Path
           d="M 2 2.5 L 20 2.5"
@@ -45,7 +46,7 @@ const MenuSvg = ({ toggle }: Props) => {
           }}
         />
       </svg>
-    </button>
+    </motion.button>
   );
 };
 

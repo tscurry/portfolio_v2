@@ -1,14 +1,18 @@
-// import { easeInOut, motion } from 'framer-motion';
-import { SVGProps } from 'react';
 import { motion } from 'framer-motion';
 
-const LogoSvg = (props: SVGProps<SVGSVGElement>) => {
+const LogoSvg = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107.25 90" {...props}>
+    <motion.svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 107.25 90"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.2 }}
+    >
       <defs>
-        <motion.clipPath id="a">
+        <clipPath id="a">
           <path d="M39 .313h67.504V9H39Zm0 0" />
-        </motion.clipPath>
+        </clipPath>
         <clipPath id="b">
           <path d="M98 .313h8.504V69H98Zm0 0" />
         </clipPath>
@@ -35,7 +39,7 @@ const LogoSvg = (props: SVGProps<SVGSVGElement>) => {
       <g clipPath="url(#d)">
         <path fill="none" stroke="#c84b31" strokeWidth={7.4479} d="M3.719 25.86v61.417" />
       </g>
-    </svg>
+    </motion.svg>
   );
 };
 

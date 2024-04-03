@@ -1,13 +1,18 @@
 import styled from 'styled-components';
-import { theme } from './theme';
 
 export const Wrapper = styled.div`
-  display: flex;
-  min-height: 100vh;
-  background-color: ${theme.colors.bg};
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: ${(props) => props.theme.colors.hamBg};
 `;
 
-export const LogoContainer = styled.div`
-  width: 85px;
-  margin: auto;
+export const LoaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 `;

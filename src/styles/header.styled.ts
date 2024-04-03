@@ -1,11 +1,29 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+interface WrapperProps {
+  $isHidden: boolean;
+  $atTop: boolean;
+}
+
+export const Wrapper = styled.div<WrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 15px 0;
   width: 100%;
+  background-color: ${(props) => props.theme.colors.bg};
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: transparent;
+
+  position: fixed;
+  top: ${(props) => (props.$isHidden ? '-100%' : 0)};
+  left: 0;
+  right: 0;
+
+  box-shadow: ${(props) => (props.$atTop ? '' : '0 2px 4px rgba(0,0,0, 0.3)')};
+  transition: top 0.4s;
+  z-index: 2;
 `;
 
 export const LogoContainter = styled.div`
@@ -20,31 +38,11 @@ export const HeadingsContainer = styled.div`
   width: 90%;
 `;
 
-export const ContactContainer = styled.button`
-  border-radius: 6px;
-  padding: 0 20px;
-  width: 120px;
-  background-color: transparent;
-  transition: background-color 0.4s ease;
-  border: 1px solid ${(props) => props.theme.colors.accent};
-  cursor: pointer;
-  margin-left: 50px;
-
-  &:hover {
-    background-color: rgba(${(props) => props.theme.colors.accentRgba}, 0.2);
-  }
-
-  @media (${(props) => props.theme.breakpoints.tablet}) {
-    width: 150px;
-    margin-top: 40px;
-  }
-`;
-
 export const SectionWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  @media (${(props) => props.theme.breakpoints.tablet}) {
+  @media (${(props) => props.theme.breakpoints.tabletLg}) {
     display: none;
   }
 `;

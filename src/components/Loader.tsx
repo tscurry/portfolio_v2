@@ -1,21 +1,31 @@
-// import * as React from 'react';
-
-import { LogoContainer, Wrapper } from '../styles/loader.styled';
-import LogoSvg from './LogoSvg';
+import * as React from 'react';
+import AnimatedLoaderSvg from './svg/AnimatedLoaderSvg';
+import { LoaderContainer, Wrapper } from '../styles/loader.styled';
+import { AnimatePresence } from 'framer-motion';
 
 const Loader = () => {
-  // const [isMounted, setIsMounted] = React.useState(true);
+  const [isMounted, setIsMounted] = React.useState(false);
 
-  // React.useEffect(() => {
-  //   const timeout = setTimeout(() => setIsMounted(false), 3000);
-  //   return () => clearTimeout(timeout);
-  // }, []);
+  React.useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 500);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  const handleAnimationComplete = () => {
+    setTimeout(() => {
+      setIsMounted(false);
+    }, 1400);
+  };
 
   return (
     <Wrapper>
-      <LogoContainer>
-        <LogoSvg />
-      </LogoContainer>
+      <AnimatePresence>
+        {isMounted && (
+          <LoaderContainer>
+            <AnimatedLoaderSvg onAnimationComplete={handleAnimationComplete} />
+          </LoaderContainer>
+        )}
+      </AnimatePresence>
     </Wrapper>
   );
 };
