@@ -4,10 +4,6 @@ import { theme } from './theme';
 export const GlobalStyle = createGlobalStyle`
   ${theme}
 
-  :root {
-    height: 500%;
-  }
-
   body {
     font-family: Expletus Sans, sans-serif; 
     box-sizing: border-box;
@@ -17,13 +13,15 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     max-width: 100%;
     height: 100%;
+
   }
 
-  a {
-    text-decoration:  none;
+  p {
+    color: ${theme.colors.lightSecondary};
+    line-height: 1.6;
   }
 
-  h1{
+  h1 {
     color: ${theme.colors.secondary};
     font-size: 60px;
     margin: 10px 0;
@@ -37,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  li:hover {
+  .header-li:hover {
     color: ${theme.colors.accent};
     transition: color 0.5s;
   }
@@ -67,7 +65,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  li {      
+  .header-li {      
     list-style: square;
     font-size: 1rem;
     font-weight: 400;
@@ -133,7 +131,7 @@ export const GlobalStyle = createGlobalStyle`
       -moz-user-select: none;
       -ms-user-select: none;
       cursor: pointer;
-      position: fixed;
+      position: absolute;
       top: 20px;
       right: 15px;
       width: 50px;
@@ -176,13 +174,46 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  li::marker {
+    color: ${theme.colors.accent};
+  }
+
   .grouped-container {
     background-color: ${theme.colors.primary};
     border-radius: 7px;
     padding: 2px 15px;
-    width: max-content;
     margin: 10px 0;
     display: flex;
     align-items: center;
+  }
+
+  .divider {
+    background-color: ${theme.colors.accent};
+    width: 50px;
+    height: 3px;
+    margin: 20px 0;
+  }
+  
+  .dot {
+    font-size: 50px;
+    color: ${theme.colors.accent};
+  }
+
+  .section-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    padding: 60px 0;
+  
+    @media (${theme.breakpoints.tabletLg}) {
+      width: 90%;
+    }
+  }
+
+  .section-title {
+    color: ${theme.colors.secondary};
+    margin: 0;
+    font-size: 35px;
   }
 `;

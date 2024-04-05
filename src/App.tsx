@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import { GlobalStyle } from './styles/GlobalStyle';
 import { Header, Loader } from './components/index';
-import { Hero } from './sections/index';
+import { Hero, About, Projects } from './sections/index';
 
 const App = () => {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -25,6 +25,8 @@ const App = () => {
         <>
           <Header />
           <Hero />
+          <About />
+          <Projects />
         </>
       )}
     </ThemeProvider>

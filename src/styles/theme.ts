@@ -20,6 +20,7 @@ export const theme = {
     tabletXl: 'max-width: 720px',
     desktopSm: 'max-width: 880px',
     desktopMd: 'max-width: 1020px',
+    desktop2Md: 'max-width: 1200px',
     desktopLg: 'max-width: 1400px',
   },
 };

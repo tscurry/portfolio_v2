@@ -7,7 +7,7 @@ import {
   Wrapper,
 } from '../styles/header.styled';
 import { MenuSvg, LogoSvg } from './svg/index';
-import { navLinks } from '../links';
+import { navLinks } from '../utils/links';
 
 const sidebar = {
   open: {
@@ -118,6 +118,7 @@ const Header = () => {
                   initial={{ y: -40, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.1, delay: idx * 0.1 + 0.4 }}
+                  className="header-li"
                 >
                   {link.name}
                 </motion.li>
@@ -141,7 +142,12 @@ const Header = () => {
               {navLinks && (
                 <ul>
                   {navLinks.map((link: { name: string; url: string }, idx) => (
-                    <motion.li key={idx} variants={variantsChild} whileTap={{ scale: 0.95 }}>
+                    <motion.li
+                      key={idx}
+                      variants={variantsChild}
+                      whileTap={{ scale: 0.95 }}
+                      className="header-li"
+                    >
                       {link.name}
                     </motion.li>
                   ))}
