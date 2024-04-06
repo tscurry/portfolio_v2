@@ -8,52 +8,7 @@ import {
 } from '../styles/header.styled';
 import { MenuSvg, LogoSvg } from './svg/index';
 import { navLinks } from '../utils/links';
-
-const sidebar = {
-  open: {
-    width: '60vw',
-    transition: {
-      type: 'tween',
-      stiffness: 400,
-      restDelta: 2,
-    },
-  },
-  closed: {
-    width: 0,
-    transition: {
-      delay: 0.5,
-      type: 'tween',
-      stiffness: 400,
-      damping: 40,
-    },
-  },
-};
-
-const variants = {
-  open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-  },
-  closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
-  },
-};
-
-const variantsChild = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-};
+import { variantsChild, sidebar, variants } from '../utils/variantsAnimation';
 
 const Header = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -126,7 +81,7 @@ const Header = () => {
             </ul>
           )}
           <motion.button
-            className="contact-button"
+            className="outline-button"
             initial={{ y: -40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.1, delay: 3 * 0.1 + 0.4 }}
@@ -153,7 +108,7 @@ const Header = () => {
                   ))}
                 </ul>
               )}
-              <motion.button className="contact-button" variants={variantsChild}>
+              <motion.button className="outline-button" variants={variantsChild}>
                 <p className="button-text">Resume</p>
               </motion.button>
             </motion.div>

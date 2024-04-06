@@ -95,7 +95,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   
-  .contact-button {
+  .outline-button {
     border-radius: 7px;
     padding: 0px;
     width: 120px;
@@ -139,6 +139,7 @@ export const GlobalStyle = createGlobalStyle`
       background: transparent;
     }
   }
+  
   #sidebar-container {
     display: none;
     flex-direction: column;
@@ -157,6 +158,9 @@ export const GlobalStyle = createGlobalStyle`
     bottom: 0;
     background-color: ${theme.colors.hamBg};
     box-shadow: -10px 0px 30px -15px ${theme.colors.bgRgba};
+    -webkit-box-shadow: -10px 0px 30px -15px ${theme.colors.bgRgba};
+    -moz-box-shadow: -10px 0px 30px -15px ${theme.colors.bgRgba};
+
   }
 
   nav {
@@ -204,7 +208,7 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     width: 80%;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 60px 0 100px;
   
     @media (${theme.breakpoints.tabletLg}) {
       width: 90%;
@@ -216,4 +220,18 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 35px;
   }
+
+  .contact-text {
+    width: 70%;
+    padding: 20px 0;
+
+    @media(${theme.breakpoints.desktopSm}) {
+      width: 100%;
+    }
+  }
+
+  .contact-button {
+    margin: 0 !important;
+  }
+
 `;

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { Grouped, ListItems, TechnologiesInnerContainer } from '../styles/About.styled';
-import fadeInUpVariants from '../utils/fadeInUpAnimation';
+import { Grouped, ListItems, TechnologiesInnerContainer } from '../styles/about.styled';
+import { fadeInUpVariants } from '../utils/variantsAnimation';
 import technologies from '../utils/technologies';
 
 const About = () => {

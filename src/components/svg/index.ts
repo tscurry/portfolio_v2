@@ -3,3 +3,4 @@ export { default as LogoSvg } from './LogoSvg';
 export { default as GithubSvg } from './GithubSvg';
 export { default as LinkedinSvg } from './LinkedinSvg';
 export { default as AnimatedLoaderSvg } from './AnimatedLoaderSvg';
+export { default as LinkSvg } from './LinkSvg';

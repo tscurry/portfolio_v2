@@ -4,7 +4,7 @@ const technologies = [
   'React',
   'React Native',
   'styled-components',
-  'Redux',
+  'Redux Toolkit',
   'Tailwind',
   'Framer Motion',
 ];
