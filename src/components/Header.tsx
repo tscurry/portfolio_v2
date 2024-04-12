@@ -68,15 +68,16 @@ const Header = () => {
           {navLinks && (
             <ul>
               {navLinks.map((link: { name: string; url: string }, idx) => (
-                <motion.li
-                  key={idx}
-                  initial={{ y: -40, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.1, delay: idx * 0.1 + 0.4 }}
-                  className="header-li"
-                >
-                  {link.name}
-                </motion.li>
+                <a href={link.url} key={idx}>
+                  <motion.li
+                    initial={{ y: -40, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.1, delay: idx * 0.1 + 0.4 }}
+                    className="header-li"
+                  >
+                    {link.name}
+                  </motion.li>
+                </a>
               ))}
             </ul>
           )}
@@ -97,14 +98,15 @@ const Header = () => {
               {navLinks && (
                 <ul>
                   {navLinks.map((link: { name: string; url: string }, idx) => (
-                    <motion.li
-                      key={idx}
-                      variants={variantsChild}
-                      whileTap={{ scale: 0.95 }}
-                      className="header-li"
-                    >
-                      {link.name}
-                    </motion.li>
+                    <a href={link.url} onClick={() => toggleOpen()} key={idx}>
+                      <motion.li
+                        variants={variantsChild}
+                        whileTap={{ scale: 0.95 }}
+                        className="header-li"
+                      >
+                        {link.name}
+                      </motion.li>
+                    </a>
                   ))}
                 </ul>
               )}

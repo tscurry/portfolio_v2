@@ -1,9 +1,14 @@
+import dadli from '../assets/images/dadli-country-club.png';
+import readdit from '../assets/images/readd-it.png';
+import portfoliov1 from '../assets/images/portfolio-v1.png';
+
 const projectDetails = [
   {
     name: 'Dadli Country Club',
-    url: 'https://dadlicountryclub.netlify.app/',
+    url: 'https://dadlicountryclub.netlify.app',
     githubRepo: 'https://github.com/tscurry/country-club',
-    img: '',
+    img: `${dadli}`,
+    alt: 'Dadli Country Club',
     description: 'Minimal responsive website showcasing basic understanding of HTML & CSS.',
     technologies: ['HTML', 'CSS', 'JavaScript'],
   },
@@ -14,13 +19,15 @@ const projectDetails = [
     description:
       'A reddit clone with basic functionality that utilizes the Reddit JSON API to mimic the reddit website but created with minimal functionality. The JSON API has been rate limited so only 10 requests can be made per minute. ',
     technologies: ['React', 'CSS', 'Redux-Toolkit', 'JavaScript'],
-    img: '',
+    img: `${readdit}`,
+    alt: 'Readd-it',
   },
   {
-    name: 'Portfolio v1',
-    url: '#',
+    name: 'Personal Website v1',
+    url: 'https://tscurryv1.netlify.app/',
     githubRepo: 'https://github.com/tscurry/portfolio_v1',
-    img: '',
+    img: `${portfoliov1}`,
+    alt: 'Personal Website',
     description:
       'First iteration of my portfolio website. Built with React, JavaScript, CSS and animated with Animate.css',
     technologies: ['React', 'JavaScript', 'CSS', 'Animate.css'],

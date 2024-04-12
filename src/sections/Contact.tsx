@@ -37,7 +37,9 @@ const Contact = () => {
         viewport={{ once: true }}
         transition={{ delay: 0.5 }}
       >
-        <p className="button-text">Send Message</p>
+        <a href="mailto:scurrytimmy@gmail.com">
+          <p className="button-text">Send Message</p>
+        </a>
       </motion.button>
     </motion.div>
   );

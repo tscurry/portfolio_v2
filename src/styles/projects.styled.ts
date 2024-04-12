@@ -53,7 +53,7 @@ export const TechText = styled.p`
   background-color: ${(props) => props.theme.colors.accent};
   color: ${(props) => props.theme.colors.secondary};
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 12px;
   margin: 0 0 2px;
 `;
 
@@ -70,7 +70,26 @@ export const IconsContainer = styled.div`
 
 export const Description = styled.p`
   padding-bottom: 10px;
+
   @media (${(props) => props.theme.breakpoints.mobileMd}) {
     font-size: 15px;
+  }
+`;
+
+export const Img = styled.img`
+  width: 100%;
+  height: 400px;
+  border-radius: 7px;
+
+  @media (${(props) => props.theme.breakpoints.tabletLg}) {
+    height: 300px;
+  }
+
+  @media (${(props) => props.theme.breakpoints.tablet}) {
+    height: 200px;
+  }
+
+  @media (${(props) => props.theme.breakpoints.mobileMd}) {
+    height: 150px;
   }
 `;

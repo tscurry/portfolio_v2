@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import { GlobalStyle } from './styles/GlobalStyle';
-import { Header, Loader } from './components/index';
+import { Header, Loader, Footer } from './components/index';
 import { Hero, About, Projects, Contact } from './sections/index';
 
 const App = () => {
@@ -28,6 +28,7 @@ const App = () => {
           <About />
           <Projects />
           <Contact />
+          <Footer />
         </>
       )}
     </ThemeProvider>

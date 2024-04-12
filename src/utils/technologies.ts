@@ -7,6 +7,7 @@ const technologies = [
   'Redux Toolkit',
   'Tailwind',
   'Framer Motion',
+  'Figma',
 ];
 
 export default technologies;

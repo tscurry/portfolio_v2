@@ -4,16 +4,22 @@ import { theme } from './theme';
 export const GlobalStyle = createGlobalStyle`
   ${theme}
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: Expletus Sans, sans-serif; 
     box-sizing: border-box;
-    scroll-behavior: smooth;
     background-color: ${theme.colors.bg};
     margin: 0;
     padding: 0;
     max-width: 100%;
     height: 100%;
+  }
 
+  a {
+    text-decoration: none;
   }
 
   p {

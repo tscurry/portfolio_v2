@@ -9,6 +9,7 @@ import {
   Title,
   Description,
   Wrapper,
+  Img,
 } from '../styles/projects.styled';
 import projectDetails from '../utils/projects';
 import { GithubSvg, LinkSvg } from '../components/svg';
@@ -20,15 +21,15 @@ interface IProjDetails {
   img: string;
   technologies: string[];
   description: string;
+  alt: string;
 }
 [];
 
 const Projects = () => {
   return (
-    <div className="section-container">
+    <div className="section-container" id="projects">
       <motion.div
         initial="hidden"
-        id="projects"
         whileInView="animate"
         variants={fadeInUpVariants}
         viewport={{ once: true }}
@@ -57,6 +58,7 @@ const Projects = () => {
                   <LinkSvg onClick={() => window.open(proj.url)} />
                 </IconsContainer>
               </HeadingContainer>
+              {proj.img ? <Img src={proj.img} alt={proj.alt} /> : null}
               <Description>{proj.description}</Description>
               <TechContainer>
                 {proj.technologies.map((name, idx) => (
