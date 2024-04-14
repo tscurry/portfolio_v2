@@ -166,7 +166,6 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: -10px 0px 30px -15px ${theme.colors.bgRgba};
     -webkit-box-shadow: -10px 0px 30px -15px ${theme.colors.bgRgba};
     -moz-box-shadow: -10px 0px 30px -15px ${theme.colors.bgRgba};
-
   }
 
   nav {

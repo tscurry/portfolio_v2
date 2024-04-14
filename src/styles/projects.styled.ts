@@ -78,8 +78,12 @@ export const Description = styled.p`
 
 export const Img = styled.img`
   width: 100%;
-  height: 400px;
+  height: 450px;
   border-radius: 7px;
+
+  @media (${(props) => props.theme.breakpoints.desktopSm}) {
+    height: 350px;
+  }
 
   @media (${(props) => props.theme.breakpoints.tabletLg}) {
     height: 300px;
@@ -92,4 +96,10 @@ export const Img = styled.img`
   @media (${(props) => props.theme.breakpoints.mobileMd}) {
     height: 150px;
   }
+`;
+
+export const InProgressText = styled.p`
+  font-style: italic;
+  color: ${(props) => props.theme.colors.accent};
+  margin: 0;
 `;

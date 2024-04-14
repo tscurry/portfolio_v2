@@ -10,6 +10,7 @@ import {
   Description,
   Wrapper,
   Img,
+  InProgressText,
 } from '../styles/projects.styled';
 import projectDetails from '../utils/projects';
 import { GithubSvg, LinkSvg } from '../components/svg';
@@ -55,11 +56,12 @@ const Projects = () => {
                 <Title>{proj.name}</Title>
                 <IconsContainer>
                   <GithubSvg onClick={() => window.open(proj.githubRepo)} />
-                  <LinkSvg onClick={() => window.open(proj.url)} />
+                  {proj.url ? <LinkSvg onClick={() => window.open(proj.url)} /> : null}
                 </IconsContainer>
               </HeadingContainer>
               {proj.img ? <Img src={proj.img} alt={proj.alt} /> : null}
               <Description>{proj.description}</Description>
+              {proj.name === 'TaskHaste' ? <InProgressText>In progress</InProgressText> : null}
               <TechContainer>
                 {proj.technologies.map((name, idx) => (
                   <TechText key={idx}>{name}</TechText>

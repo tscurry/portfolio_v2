@@ -23,17 +23,21 @@ const About = () => {
         My journey began with a fascination for how design and code intertwine to shape our
         interactions with technology. Since then, I've devoted myself to mastering HTML, CSS, and
         JavaScript. With each project, I strive to be better than I was previously, extending on
-        design principles and concepts I previously learned to apply them to future projects.
+        design principles and concepts I previously learned to apply them to future works.
       </p>
       <p>
         Recently, I've ventured into the world of mobile front-end development, exploring
         technologies like React Native to craft visually stunning yet highly intuitive mobile
         interfaces. I'm driven by the challenge of creating engaging experiences that feel natural
-        with every tap and swipe. While still early in my professional path, I've already tackled
-        solo projects &#8211; from responsive portfolios to interactive app prototypes &#8211; using
-        each endeavor as an opportunity to refine my skills and grow as a developer.
+        with every tap and swipe.
       </p>
-      <p>Some technologies and frameworks I've worked with:</p>
+
+      <p>
+        While still early in my professional path, I've already tackled solo projects &#8211; from
+        responsive portfolios to interactive app prototypes &#8211; using each endeavor as an
+        opportunity to refine my skills and grow as a developer.
+      </p>
+      <p>Some tools, technologies and frameworks I've worked with:</p>
 
       <Grouped>
         <TechnologiesInnerContainer>

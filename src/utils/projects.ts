@@ -1,6 +1,7 @@
 import dadli from '../assets/images/dadli-country-club.png';
 import readdit from '../assets/images/readd-it.png';
 import portfoliov1 from '../assets/images/portfolio-v1.png';
+import taskhaste from '../assets/images/taskhaste.png';
 
 const projectDetails = [
   {
@@ -31,6 +32,17 @@ const projectDetails = [
     description:
       'First iteration of my portfolio website. Built with React, JavaScript, CSS and animated with Animate.css',
     technologies: ['React', 'JavaScript', 'CSS', 'Animate.css'],
+  },
+
+  {
+    name: 'TaskHaste',
+    url: '',
+    githubRepo: 'https://github.com/tscurry/taskhaste',
+    img: `${taskhaste}`,
+    alt: 'taskhaste',
+    description:
+      "TaskHaste is a task management web application designed to connect users with helpers who can assist with a variety of tasks. Whether it's shopping, errands, cleaning, or more, TaskHaste aims to make it simple and easy to find reliable help.",
+    technologies: [],
   },
 ];
 

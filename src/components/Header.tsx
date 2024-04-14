@@ -13,11 +13,14 @@ import { variantsChild, sidebar, variants } from '../utils/variantsAnimation';
 const Header = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const [isHidden, setIsHidden] = React.useState(false);
+  const [linkClicked, setLinkClicked] = React.useState(false);
   const [isAtTop, setIsAtTop] = React.useState(true);
 
   const headerRef = React.useRef<HTMLDivElement>(null);
   const sidebarRef = React.useRef<HTMLDivElement>(null);
   const prevScrollPosRef = React.useRef<number>(window.scrollY);
+
+  const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
   // to hide header when scrolling down and show when scrolling up
   const hideHeaderScroll = () => {
@@ -30,6 +33,17 @@ const Header = () => {
 
     prevScrollPosRef.current = currScrollPosition;
     setIsAtTop(window.scrollY === 0);
+  };
+
+  const linkSidebarClose = async (link: string, e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+    e.preventDefault();
+    setLinkClicked(true);
+    toggleOpen();
+
+    // wait for animation to complete before going to section on page
+    await sleep(400);
+    window.location.href = link;
+    setLinkClicked(false);
   };
 
   React.useEffect(() => {
@@ -56,6 +70,8 @@ const Header = () => {
       }
     }
   }, [isOpen]);
+
+  console.log(linkClicked);
 
   return (
     <Wrapper ref={headerRef} $isHidden={isHidden} $atTop={isAtTop}>
@@ -93,16 +109,22 @@ const Header = () => {
 
         <motion.nav initial={false} animate={isOpen ? 'open' : 'closed'} id="stretch-nav">
           <MenuSvg toggle={() => toggleOpen()} />
-          <motion.div className="background" variants={sidebar}>
-            <motion.div variants={variants} id="sidebar-container" ref={sidebarRef}>
+          <motion.div className="background" variants={sidebar} custom={linkClicked}>
+            <motion.div
+              custom={linkClicked}
+              variants={variants}
+              id="sidebar-container"
+              ref={sidebarRef}
+            >
               {navLinks && (
                 <ul>
                   {navLinks.map((link: { name: string; url: string }, idx) => (
-                    <a href={link.url} onClick={() => toggleOpen()} key={idx}>
+                    <a href={link.url} key={idx}>
                       <motion.li
                         variants={variantsChild}
                         whileTap={{ scale: 0.95 }}
                         className="header-li"
+                        onClick={(e) => linkSidebarClose(link.url, e)}
                       >
                         {link.name}
                       </motion.li>

@@ -1,4 +1,6 @@
-export const fadeInUpVariants = {
+import { Variants } from 'framer-motion';
+
+export const fadeInUpVariants: Variants = {
   hidden: {
     y: 40,
     opacity: 0,
@@ -13,7 +15,7 @@ export const fadeInUpVariants = {
   },
 };
 
-export const variantsChild = {
+export const variantsChild: Variants = {
   open: {
     y: 0,
     opacity: 1,
@@ -21,6 +23,7 @@ export const variantsChild = {
       y: { stiffness: 1000, velocity: -100 },
     },
   },
+
   closed: {
     y: 50,
     opacity: 0,
@@ -30,16 +33,16 @@ export const variantsChild = {
   },
 };
 
-export const variants = {
+export const variants: Variants = {
   open: {
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
   },
-  closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
-  },
+  closed: (linkClicked: boolean) => ({
+    transition: { staggerChildren: linkClicked ? 0 : 0.05, staggerDirection: -1 },
+  }),
 };
 
-export const sidebar = {
+export const sidebar: Variants = {
   open: {
     width: '60vw',
     transition: {
@@ -48,13 +51,13 @@ export const sidebar = {
       restDelta: 2,
     },
   },
-  closed: {
+  closed: (linkClicked: boolean) => ({
     width: 0,
     transition: {
-      delay: 0.5,
+      delay: linkClicked ? 0.1 : 0.5,
       type: 'tween',
       stiffness: 400,
       damping: 40,
     },
-  },
+  }),
 };
