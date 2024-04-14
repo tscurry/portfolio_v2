@@ -15,7 +15,7 @@ export const HeroContainer = styled.div`
 `;
 
 export const SocialsText = styled.p`
-  color: ${(props) => props.theme.colors.accent};
+  color: ${(props) => props.theme.colors.secondary};
   font-size: 17px;
   margin-right: 20px;
 `;

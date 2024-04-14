@@ -71,8 +71,6 @@ const Header = () => {
     }
   }, [isOpen]);
 
-  console.log(linkClicked);
-
   return (
     <Wrapper ref={headerRef} $isHidden={isHidden} $atTop={isAtTop}>
       <HeadingsContainer>
@@ -84,16 +82,16 @@ const Header = () => {
           {navLinks && (
             <ul>
               {navLinks.map((link: { name: string; url: string }, idx) => (
-                <a href={link.url} key={idx}>
-                  <motion.li
-                    initial={{ y: -40, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.1, delay: idx * 0.1 + 0.4 }}
-                    className="header-li"
-                  >
-                    {link.name}
-                  </motion.li>
-                </a>
+                <motion.li
+                  key={idx}
+                  initial={{ y: -40, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.1, delay: idx * 0.1 + 0.2 }}
+                  className="header-li"
+                  onClick={() => (window.location.href = link.url)}
+                >
+                  {link.name}
+                </motion.li>
               ))}
             </ul>
           )}
@@ -101,7 +99,7 @@ const Header = () => {
             className="outline-button"
             initial={{ y: -40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.1, delay: 3 * 0.1 + 0.4 }}
+            transition={{ duration: 0.1, delay: 3 * 0.1 + 0.2 }}
           >
             <p className="button-text">Resume</p>
           </motion.button>
@@ -119,16 +117,15 @@ const Header = () => {
               {navLinks && (
                 <ul>
                   {navLinks.map((link: { name: string; url: string }, idx) => (
-                    <a href={link.url} key={idx}>
-                      <motion.li
-                        variants={variantsChild}
-                        whileTap={{ scale: 0.95 }}
-                        className="header-li"
-                        onClick={(e) => linkSidebarClose(link.url, e)}
-                      >
-                        {link.name}
-                      </motion.li>
-                    </a>
+                    <motion.li
+                      key={idx}
+                      variants={variantsChild}
+                      whileTap={{ scale: 0.95 }}
+                      className="header-li"
+                      onClick={(e) => linkSidebarClose(link.url, e)}
+                    >
+                      {link.name}
+                    </motion.li>
                   ))}
                 </ul>
               )}

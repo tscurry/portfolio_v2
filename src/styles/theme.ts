@@ -2,7 +2,6 @@ export const theme = {
   colors: {
     bg: '#151f28',
     hamBg: '#1b2530',
-    // bg: '#191919',
     primary: '#31363f',
     secondary: '#ecdbba',
     lightSecondary: 'rgba(236, 219, 186, 0.7)',

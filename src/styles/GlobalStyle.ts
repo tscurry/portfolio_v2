@@ -238,5 +238,4 @@ export const GlobalStyle = createGlobalStyle`
   .contact-button {
     margin: 0 !important;
   }
-
 `;

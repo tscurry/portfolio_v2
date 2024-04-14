@@ -11,5 +11,5 @@ export const Text = styled.p`
   text-align: center;
   font-size: 14px;
   margin: 0;
-  opacity: 50%;
+  opacity: 80%;
 `;
