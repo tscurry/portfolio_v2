@@ -9,20 +9,40 @@ export const Title = styled.h2`
   }
 `;
 
+export const SplitProj = styled.div`
+  width: 100%;
+  display: grid;
+  grid-row-gap: 30px;
+  grid-column-gap: 30px;
+  grid-template-columns: 1fr 1fr;
+
+  @media (${(props) => props.theme.breakpoints.desktopMd}) {
+    grid-column-gap: 20px;
+  }
+
+  @media (${(props) => props.theme.breakpoints.desktopSm}) {
+    display: block;
+  }
+`;
+
 export const Wrapper = styled.div`
-  width: 90%;
+  width: 100%;
+  height: 520px;
   background-color: ${(props) => props.theme.colors.primary};
-  height: auto;
   border-radius: 7px;
-  margin-bottom: 30px;
   -webkit-box-shadow: 1px 0px 14px 2px ${(props) => props.theme.colors.bgRgba};
   -moz-box-shadow: 1px 0px 14px 2px ${(props) => props.theme.colors.bgRgba};
   box-shadow: 1px 0px 14px 2px ${(props) => props.theme.colors.bgRgba};
   transform: scaleX(100%);
   transition: transform 0.7s;
 
-  @media (${(props) => props.theme.breakpoints.tabletLg}) {
-    width: 100%;
+  @media (${(props) => props.theme.breakpoints.desktop2Md}) {
+    height: 485px;
+  }
+
+  @media (${(props) => props.theme.breakpoints.desktopSm}) {
+    margin-bottom: 30px;
+    height: auto;
   }
 
   &:hover {
@@ -38,14 +58,22 @@ export const Wrapper = styled.div`
 
 export const ProjectContainer = styled.div`
   padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 `;
 
 export const TechContainer = styled.div`
+  position: absolute;
+  bottom: 0;
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   gap: 4px;
   margin: 20px 0;
+
+  @media (${(props) => props.theme.breakpoints.desktopSm}) {
+    position: relative;
+  }
 `;
 
 export const TechText = styled.p`
@@ -69,8 +97,6 @@ export const IconsContainer = styled.div`
 `;
 
 export const Description = styled.p`
-  padding-bottom: 10px;
-
   @media (${(props) => props.theme.breakpoints.mobileMd}) {
     font-size: 15px;
   }
@@ -78,15 +104,18 @@ export const Description = styled.p`
 
 export const Img = styled.img`
   width: 100%;
-  height: 450px;
+  height: 275px;
   border-radius: 7px;
 
-  @media (${(props) => props.theme.breakpoints.desktopSm}) {
-    height: 350px;
+  @media (${(props) => props.theme.breakpoints.desktop2Md}) {
+    height: 210px;
+  }
+  @media (${(props) => props.theme.breakpoints.desktopMd}) {
+    height: 180px;
   }
 
-  @media (${(props) => props.theme.breakpoints.tabletLg}) {
-    height: 300px;
+  @media (${(props) => props.theme.breakpoints.desktopSm}) {
+    height: 250px;
   }
 
   @media (${(props) => props.theme.breakpoints.tablet}) {
@@ -101,5 +130,7 @@ export const Img = styled.img`
 export const InProgressText = styled.p`
   font-style: italic;
   color: ${(props) => props.theme.colors.accent};
-  margin: 0;
+  margin: 20px 0;
+  position: absolute;
+  bottom: 0;
 `;

@@ -18,7 +18,7 @@ const projectDetails = [
     url: 'https://readd-it.com',
     githubRepo: 'https://github.com/tscurry/readd-it',
     description:
-      'A reddit clone with basic functionality that utilizes the Reddit JSON API to mimic the reddit website but created with minimal functionality. The JSON API has been rate limited so only 10 requests can be made per minute. ',
+      'A reddit clone that utilizes the Reddit JSON API to mimic the reddit website. The JSON API has been rate limited so only 10 requests can be made per minute. ',
     technologies: ['React', 'CSS', 'Redux-Toolkit', 'JavaScript'],
     img: `${readdit}`,
     alt: 'Readd-it',
@@ -41,7 +41,7 @@ const projectDetails = [
     img: `${taskhaste}`,
     alt: 'taskhaste',
     description:
-      "TaskHaste is a task management web application designed to connect users with helpers who can assist with a variety of tasks. Whether it's shopping, errands, cleaning, or more, TaskHaste aims to make it simple and easy to find reliable help.",
+      'TaskHaste is a task management web application designed to connect users with helpers who can assist with a variety of tasks',
     technologies: [],
   },
 ];
