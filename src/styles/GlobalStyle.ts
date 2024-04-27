@@ -9,7 +9,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: Expletus Sans, sans-serif; 
     box-sizing: border-box;
     background-color: ${theme.colors.bg};
     margin: 0;
@@ -18,13 +17,18 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
-  a {
-    text-decoration: none;
-  }
-
   p {
     color: ${theme.colors.lightSecondary};
     line-height: 1.6;
+    font-family: Montserrat, sans-serif;
+  }
+
+  a { 
+    text-decoration: none;
+  }
+
+  h1, h2, li, .section-title, .button-text {
+    font-family: Expletus Sans, sans-serif; 
   }
 
   h1 {
@@ -60,7 +64,7 @@ export const GlobalStyle = createGlobalStyle`
     transition: transform 0.7s, fill 0.3s;
   }
 
- ul{
+ ul {
     display: flex;
     padding: 0;
     gap: 40px;

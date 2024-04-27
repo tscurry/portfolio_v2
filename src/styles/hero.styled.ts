@@ -21,6 +21,7 @@ export const SocialsText = styled.p`
 `;
 
 export const IntroText = styled.p`
-  color: ${(props) => props.theme.colors.lightSecondary};
+  color: ${(props) => props.theme.colors.lighterSecondary};
   font-size: 20px;
+  font-family: Expletus Sans;
 `;

@@ -45,6 +45,7 @@ export const ListItems = styled.li`
   color: ${(props) => props.theme.colors.lightSecondary};
   font-size: 14px;
   list-style-type: '\u002a';
+  font-family: Montserrat;
   line-height: 2.2;
   padding-left: 6px;
 `;

@@ -10,6 +10,8 @@ export const Wrapper = styled.div`
 export const Text = styled.p`
   text-align: center;
   font-size: 14px;
+  line-height: 1.2;
+  color: ${(props) => props.theme.colors.lighterSecondary}
   margin: 0;
   opacity: 80%;
 `;
