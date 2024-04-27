@@ -16,12 +16,13 @@ export const HeroContainer = styled.div`
 
 export const SocialsText = styled.p`
   color: ${(props) => props.theme.colors.accent};
+  font-weight: 600;
   font-size: 17px;
   margin-right: 20px;
 `;
 
 export const IntroText = styled.p`
-  color: ${(props) => props.theme.colors.lighterSecondary};
+  color: ${(props) => props.theme.colors.lightSecondary};
   font-size: 20px;
   font-family: Expletus Sans;
 `;

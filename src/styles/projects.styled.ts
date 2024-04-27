@@ -97,7 +97,6 @@ export const IconsContainer = styled.div`
 `;
 
 export const Description = styled.p`
-  color: ${(props) => props.theme.colors.lightSecondary};
   @media (${(props) => props.theme.breakpoints.mobileMd}) {
     font-size: 15px;
   }

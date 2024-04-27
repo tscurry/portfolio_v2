@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    color: ${theme.colors.lightSecondary};
+    color: ${theme.colors.secondary};
     line-height: 1.6;
     font-family: Montserrat, sans-serif;
   }
