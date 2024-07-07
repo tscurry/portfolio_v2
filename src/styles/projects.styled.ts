@@ -28,6 +28,7 @@ export const SplitProj = styled.div`
 export const Wrapper = styled.div`
   width: 100%;
   height: 550px;
+  position: relative;
   background-color: ${(props) => props.theme.colors.primary};
   border-radius: 7px;
   -webkit-box-shadow: 1px 0px 14px 2px ${(props) => props.theme.colors.bgRgba};
@@ -42,6 +43,10 @@ export const Wrapper = styled.div`
 
   @media (${(props) => props.theme.breakpoints.desktopSm}) {
     margin-bottom: 30px;
+    height: auto;
+  }
+
+  @media (${(props) => props.theme.breakpoints.desktopXl}) {
     height: auto;
   }
 
@@ -100,31 +105,16 @@ export const Description = styled.p`
   @media (${(props) => props.theme.breakpoints.mobileMd}) {
     font-size: 15px;
   }
+
+  @media (${(props) => props.theme.breakpoints.desktopXl}) {
+    margin-bottom: 50px;
+  }
 `;
 
 export const Img = styled.img`
   width: 100%;
-  height: 275px;
+  aspect-ratio: 16/9;
   border-radius: 7px;
-
-  @media (${(props) => props.theme.breakpoints.desktop2Md}) {
-    height: 210px;
-  }
-  @media (${(props) => props.theme.breakpoints.desktopMd}) {
-    height: 180px;
-  }
-
-  @media (${(props) => props.theme.breakpoints.desktopSm}) {
-    height: 250px;
-  }
-
-  @media (${(props) => props.theme.breakpoints.tablet}) {
-    height: 200px;
-  }
-
-  @media (${(props) => props.theme.breakpoints.mobileMd}) {
-    height: 150px;
-  }
 `;
 
 export const InProgressText = styled.p`

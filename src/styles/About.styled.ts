@@ -42,7 +42,7 @@ export const TechnologiesInnerContainer = styled.ol`
 `;
 
 export const ListItems = styled.li`
-  color: ${(props) => props.theme.colors.lightSecondary};
+  color: ${(props) => props.theme.colors.secondary};
   font-size: 14px;
   list-style-type: '\u002a';
   font-family: Montserrat;

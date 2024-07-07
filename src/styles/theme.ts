@@ -21,5 +21,6 @@ export const theme = {
     desktopMd: 'max-width: 1020px',
     desktop2Md: 'max-width: 1200px',
     desktopLg: 'max-width: 1400px',
+    desktopXl: 'min-width: 1560px',
   },
 };
